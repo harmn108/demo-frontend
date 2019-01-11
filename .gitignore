@@ -26,4 +26,3 @@ webpack.records.json
 *.ngsummary.json
 *.metadata.json
 *.shim.ngstyle.ts
-/src/assets/js/ga.js

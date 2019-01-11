@@ -6,12 +6,33 @@
             </div>
         </div>
 
-        <!--<block-list class="mb-5" [blocks]="blocks"></block-list>-->
 
-        <!--<div *ngIf="loadingBlocks > 0" class="row justify-content-center align-items-center spinner no-gutters">-->
-            <!--<mat-spinner></mat-spinner>-->
-        <!--</div>-->
+
+        <div class="search-form-container filter-action-log">
+            <div class="filter-form-container ">
+                <form class="form search-nomination-form filter-form" novalidate [formGroup]="searchForm" (ngSubmit)="submit()">
+                    <div class="form-fields">
+                        <mat-select placeholder="Country" formControlName="country" id="country">
+                            <mat-option  value="us">
+                                USA
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-form-field class="zip-code">
+                            <input matInput placeholder="Zip Code" formControlName="zip_code" id="zip_code">
+                        </mat-form-field>
+                    </div>
+
+                    <button mat-raised-button color="primary">Primary</button>
+                </form>
+            </div>
+            <p>Places Not Found</p>
+        </div>
+
     </div>
 </div>
-
-
+<ng-template #logsNotFound>
+    <mat-card class="centered">
+        <mat-spinner style="margin: 50px auto;"></mat-spinner>
+    </mat-card>
+</ng-template>

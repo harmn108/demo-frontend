@@ -207,7 +207,9 @@ json-viewer > .json-viewer > .item .item__value {
   height: 400px;
 }
 .mat-raised-button.mat-primary {
-  background: #36f;
+    background: #00a8e5;
+    width: 125px;
+    height: 60px;
 }
 .button {
   font-size: 16px;

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Country } from './models/country';
 import { filter, map } from 'rxjs/operators';
 import { ErrorService } from './error.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Subject } from 'rxjs/Subject';
 
@@ -21,8 +21,11 @@ export class CountryService {
 
     getAll(): void {
         const url = this.countriesUrl + '/all';
+        const apiKey = environment.x_api_token;
         try {
-            this.http.get(url)
+            let headers = new HttpHeaders();
+            headers = headers.set('X-API-TOKEN', apiKey);
+            this.http.get(url, {headers: headers})
                 .pipe(filter(data => (data != null)))
                 .pipe(map(data => {
                     const countriesList = [];

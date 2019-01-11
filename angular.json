@@ -34,9 +34,7 @@
                             "src/styles.css",
                             "src/assets/css/publiq.icons.css"
                         ],
-                        "scripts": [
-                            "./src/assets/js/ga.js"
-                        ]
+                        "scripts": []
                     },
                     "configurations": {
                         "production": {

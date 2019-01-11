@@ -12,6 +12,9 @@ import {
     MatRippleModule, MatSelectModule, MatSidenavModule, MatSlideToggleModule, MatSliderModule, MatSortModule,
     MatTabsModule, MatTooltipModule, MatNativeDateModule
 } from '@angular/material';
+import { PlaceService } from '../services/place.service';
+import { ErrorService } from '../services/error.service';
+import { CountryService } from '../services/country.service';
 
 @NgModule({
     imports: [
@@ -54,6 +57,11 @@ import {
     ],
     declarations: [
         ErrorPageComponent,
+    ],
+    providers: [
+        PlaceService,
+        ErrorService,
+        CountryService
     ],
     exports: [
         ErrorPageComponent,

@@ -1,4 +1,4 @@
-<div class="container-fluid main-grid">
+<div class="container-fluid main-grid" *ngIf="!loading; else placesNotFound">
     <div class="mb-5">
         <div class="row no-gutters mb-3">
             <div class="col-md-6 col-12 mt-50">
@@ -6,15 +6,13 @@
             </div>
         </div>
 
-
-
         <div class="search-form-container filter-action-log">
-            <div class="filter-form-container ">
+            <div class="filter-form-container">
                 <form class="form search-nomination-form filter-form" novalidate [formGroup]="searchForm" (ngSubmit)="submit()">
                     <div class="form-fields">
                         <mat-select placeholder="Country" formControlName="country" id="country">
-                            <mat-option  value="us">
-                                USA
+                            <mat-option *ngFor="let country of countriesList" [value]="country.code">
+                                {{country.name}}
                             </mat-option>
                         </mat-select>
 
@@ -23,15 +21,46 @@
                         </mat-form-field>
                     </div>
 
-                    <button mat-raised-button color="primary">Primary</button>
+                    <button mat-raised-button color="primary" [disabled]="!searchForm.valid">Search</button>
                 </form>
             </div>
-            <p>Places Not Found</p>
+            <p>Places Found: <span>{{placesCount}}</span></p>
         </div>
 
+        <div *ngIf="placesCount && placesList.length">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <tbody>
+                <!-- ArchiveID Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+
+                <!-- From Date Column -->
+                <ng-container matColumnDef="latitude">
+                    <th mat-header-cell *matHeaderCellDef>Latitude</th>
+                    <td mat-cell *matCellDef="let element">{{element.latitude}}</td>
+                </ng-container>
+
+                <!-- To Date Column -->
+                <ng-container matColumnDef="longitude">
+                    <th mat-header-cell *matHeaderCellDef>Longitude</th>
+                    <td mat-cell *matCellDef="let element">{{element.longitude}}</td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </tbody>
+            </table>
+
+            <div style="margin: 3rem 0;">
+                <mat-paginator [length]="placesCount" [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
     </div>
 </div>
-<ng-template #logsNotFound>
+
+<ng-template #placesNotFound>
     <mat-card class="centered">
         <mat-spinner style="margin: 50px auto;"></mat-spinner>
     </mat-card>

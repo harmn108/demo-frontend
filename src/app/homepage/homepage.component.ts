@@ -28,7 +28,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
         }
     }
 
-    displayedColumns: string[] = ['name', 'latitude', 'longitude'];
+    displayedColumns: string[] = ['name', 'latitude', 'longitude', 'zip_code', 'country'];
     dataSource = new MatTableDataSource<Place>(this.ELEMENT_DATA);
     public getAllCountriesSubscription: Subscription = Subscription.EMPTY;
     public placesListCountDataChangedSubscription: Subscription = Subscription.EMPTY;
@@ -63,7 +63,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
                     this.placesList = placesList;
                     this.dataSource = new MatTableDataSource<Place>(placesList);
                     this.loading = false;
-                    console.log('placesList - ', placesList);
                 }
             });
         }

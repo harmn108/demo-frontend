@@ -4,7 +4,7 @@ import { ErrorService } from './error.service';
 import { filter, map } from 'rxjs/operators';
 import { Place } from './models/place';
 import { environment } from '../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class PlaceService {
@@ -22,19 +22,15 @@ export class PlaceService {
     }
 
     getPlacesByFilter(requestData = {}): void {
-        console.log(requestData);
+        const apiKey = environment.x_api_token;
+        let headers = new HttpHeaders();
+        headers = headers.set('X-API-TOKEN', apiKey);
         const parameters = requestData ? JSON.stringify(requestData) : '{}';
         const url = this.placesUrl + '/get-by-filter/' + parameters;
         try {
-            this.http.get(url)
+            this.http.get(url, {headers: headers})
             .pipe(filter(data => (data != null)))
             .pipe(map(data => {
-
-                /// mock data
-                let result = [{'name' : 'test', 'latitude' : '34534.45', 'longitude' : '567567.65'}];
-                data = {'result': result, 'count': 1};
-                ///
-
                 const placesList = [];
                 // @ts-ignore
                 if (data && data.result) {

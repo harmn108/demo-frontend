@@ -2,12 +2,14 @@ export interface PlaceOptions {
     name?: string;
     latitude?: string;
     longitude?: string;
+    zipCode?: any;
 }
 
 export class Place {
     name?: string;
     latitude?: string;
     longitude?: string;
+    zipCode?: any;
 
     constructor(options?: PlaceOptions) {
         for (const k in options) {

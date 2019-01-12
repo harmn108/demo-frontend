@@ -34,11 +34,6 @@ export class HomepageComponent implements OnInit, OnDestroy {
     public placesListCountDataChangedSubscription: Subscription = Subscription.EMPTY;
     public placesByFilterDataChangedSubscription: Subscription = Subscription.EMPTY;
 
-    public filterFields = {
-        country: '',
-        zip_code: ''
-    };
-
     constructor(
         private FormBuilder: FormBuilder,
         private placeService: PlaceService,
@@ -48,27 +43,30 @@ export class HomepageComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.countryService.getAll();
-        this.buildForm();
+        if (isPlatformBrowser(this.platformId)) {
+            this.countryService.getAll();
 
-        this.getAllCountriesSubscription = this.countryService.allCountriesDataChanged.subscribe((countriesList: Country[]) => {
-            if (countriesList) {
-                this.countriesList = countriesList;
-            }
-        });
+            this.buildForm();
 
-        this.placesListCountDataChangedSubscription = this.placeService.placesListCountDataChanged.subscribe((count: number) => {
-            this.placesCount = count;
-        });
+            this.getAllCountriesSubscription = this.countryService.allCountriesDataChanged.subscribe((countriesList: Country[]) => {
+                if (countriesList) {
+                    this.countriesList = countriesList;
+                }
+            });
 
-        this.placesByFilterDataChangedSubscription = this.placeService.placesByFilterDataChanged.subscribe((placesList: Place[]) => {
-            if (placesList) {
-                this.placesList = placesList;
-                this.dataSource = new MatTableDataSource<Place>(placesList);
-                this.loading = false;
-                console.log('placesList - ', placesList);
-            }
-        });
+            this.placesListCountDataChangedSubscription = this.placeService.placesListCountDataChanged.subscribe((count: number) => {
+                this.placesCount = count;
+            });
+
+            this.placesByFilterDataChangedSubscription = this.placeService.placesByFilterDataChanged.subscribe((placesList: Place[]) => {
+                if (placesList) {
+                    this.placesList = placesList;
+                    this.dataSource = new MatTableDataSource<Place>(placesList);
+                    this.loading = false;
+                    console.log('placesList - ', placesList);
+                }
+            });
+        }
     }
 
     private buildForm(): void {

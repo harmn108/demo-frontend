@@ -25,7 +25,7 @@ import {TransferHttpCacheModule} from "@nguniversal/common";
 
 @NgModule({
     imports: [
-        BrowserModule.withServerTransition({appId: 'explorer-app'}),
+        BrowserModule.withServerTransition({appId: 'wic-app'}),
         FormsModule,
         AppRoutingModule,
         HttpClientModule,

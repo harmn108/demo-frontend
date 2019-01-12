@@ -1,7 +1,6 @@
 .idea
 .DS_Store
 .vscode
-morgan.log
 
 # Built #
 /__build__/
@@ -17,12 +16,3 @@ morgan.log
 npm-debug.log
 /npm-debug.log.*
 
-# Webpack #
-webpack.records.json
-
-# Angular #
-*.ngfactory.ts
-*.css.shim.ts
-*.ngsummary.json
-*.metadata.json
-*.shim.ngstyle.ts

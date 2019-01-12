@@ -7,7 +7,7 @@
         </div>
 
         <div class="search-form-container filter-action-log">
-            <div class="filter-form-container">
+            <div class="filter-form-container" *ngIf="searchForm">
                 <form class="form search-nomination-form filter-form" novalidate [formGroup]="searchForm" (ngSubmit)="submit()">
                     <div class="form-fields">
                         <mat-select placeholder="Country" formControlName="country" id="country">

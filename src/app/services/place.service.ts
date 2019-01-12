@@ -13,7 +13,7 @@ export class PlaceService {
     placesByFilterDataChanged: Subject<Place[]> = new Subject<Place[]>();
 
     placesListCountData = 0;
-    placesListCountDataChanged: Subject<number> = new Subject<number>()
+    placesListCountDataChanged: Subject<number> = new Subject<number>();
 
     private placesUrl = `${environment.backend}/api/v1/place`;
 

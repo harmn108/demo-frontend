@@ -1,8 +1,8 @@
 {
-    "name": "angular-io-example",
+    "name": "wic-project",
     "version": "1.0.0",
     "private": true,
-    "description": "Example project from an angular.io guide.",
+    "description": "wic project",
     "scripts": {
         "ng": "ng",
         "build": "ng build --prod",

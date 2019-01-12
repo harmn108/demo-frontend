@@ -16,7 +16,6 @@ import { isPlatformBrowser } from '@angular/common';
 export class HomepageComponent implements OnInit, OnDestroy {
     public loading = false;
     public searchForm: FormGroup;
-    private errorMessages: string;
     public countriesList: Country[] = [];
     public placesList: Place[];
     private ELEMENT_DATA: Place[] = [];
@@ -81,6 +80,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
         }
 
         this.loading = true;
+
         this.placeService.getPlacesByFilter(this.searchForm.value);
     }
 

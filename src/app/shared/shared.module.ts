@@ -6,11 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {
     MatButtonModule, MatIconModule, MatMenuModule, MatSnackBarModule,
-    MatToolbarModule, MatCardModule, MatAutocompleteModule, MatButtonToggleModule, MatCheckboxModule, MatChipsModule,
-    MatTableModule, MatDatepickerModule, MatDialogModule, MatExpansionModule, MatFormFieldModule, MatGridListModule,
-    MatInputModule, MatListModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule,
-    MatRippleModule, MatSelectModule, MatSidenavModule, MatSlideToggleModule, MatSliderModule, MatSortModule,
-    MatTabsModule, MatTooltipModule, MatNativeDateModule
+    MatToolbarModule, MatTableModule, MatFormFieldModule, MatGridListModule,
+    MatInputModule, MatListModule, MatPaginatorModule, MatSelectModule
 } from '@angular/material';
 import { PlaceService } from '../services/place.service';
 import { ErrorService } from '../services/error.service';
@@ -24,39 +21,20 @@ import { CountryService } from '../services/country.service';
         ReactiveFormsModule,
         FlexLayoutModule,
         MatIconModule,
-        MatCardModule,
-        MatAutocompleteModule,
         MatButtonModule,
-        MatButtonToggleModule,
-        MatCheckboxModule,
-        MatChipsModule,
         MatTableModule,
-        MatDatepickerModule,
-        MatDialogModule,
-        MatExpansionModule,
         MatFormFieldModule,
         MatGridListModule,
         MatInputModule,
         MatListModule,
         MatMenuModule,
         MatPaginatorModule,
-        MatProgressBarModule,
-        MatProgressSpinnerModule,
-        MatRadioModule,
-        MatRippleModule,
         MatSelectModule,
-        MatSidenavModule,
-        MatSlideToggleModule,
-        MatSliderModule,
         MatSnackBarModule,
-        MatSortModule,
-        MatTabsModule,
-        MatToolbarModule,
-        MatTooltipModule,
-        MatNativeDateModule,
+        MatToolbarModule
     ],
     declarations: [
-        ErrorPageComponent,
+        ErrorPageComponent
     ],
     providers: [
         PlaceService,
@@ -69,36 +47,17 @@ import { CountryService } from '../services/country.service';
         ReactiveFormsModule,
         FlexLayoutModule,
         MatIconModule,
-        MatCardModule,
-        MatAutocompleteModule,
         MatButtonModule,
-        MatButtonToggleModule,
-        MatCheckboxModule,
-        MatChipsModule,
         MatTableModule,
-        MatDatepickerModule,
-        MatDialogModule,
-        MatExpansionModule,
         MatFormFieldModule,
         MatGridListModule,
         MatInputModule,
         MatListModule,
         MatMenuModule,
         MatPaginatorModule,
-        MatProgressBarModule,
-        MatProgressSpinnerModule,
-        MatRadioModule,
-        MatRippleModule,
         MatSelectModule,
-        MatSidenavModule,
-        MatSlideToggleModule,
-        MatSliderModule,
         MatSnackBarModule,
-        MatSortModule,
-        MatTabsModule,
-        MatToolbarModule,
-        MatTooltipModule,
-        MatNativeDateModule,
+        MatToolbarModule
     ]
 })
 export class SharedModule {

@@ -666,3 +666,6 @@ mat-accordion mat-expansion-panel mat-expansion-panel-header .mat-expansion-indi
 .public-header.has-revisions {
     top: 55px;
 }
+.mat-card {
+    box-shadow: none !important;
+}

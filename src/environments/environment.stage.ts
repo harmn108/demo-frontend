@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    ds_backend: 'https://stage-api.publiq.network:8088',
-    socket_endpoint: 'wss://daemon.publiq.network:7080'
+    backend: 'http://127.0.0.1:8081',
+    x_api_token: '71vg61v4f94lsxp43r2d'
 };

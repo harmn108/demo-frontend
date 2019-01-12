@@ -11,18 +11,11 @@ import {
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    MatProgressSpinnerModule,
-    MatToolbarModule,
-    MatSidenavModule,
     MatListModule,
     MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
     MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatExpansionModule
-} from "@angular/material";
+    MatPaginatorModule, MatProgressSpinnerModule, MatCardModule
+} from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {LayoutModule} from '@angular/cdk/layout';
 import {TemplateComponent} from './template/template.component';
@@ -32,7 +25,7 @@ import {TransferHttpCacheModule} from "@nguniversal/common";
 
 @NgModule({
     imports: [
-        BrowserModule.withServerTransition({appId: 'explorer-app'}),
+        BrowserModule.withServerTransition({appId: 'wic-app'}),
         FormsModule,
         AppRoutingModule,
         HttpClientModule,
@@ -47,16 +40,11 @@ import {TransferHttpCacheModule} from "@nguniversal/common";
         AppRoutingModule,
         NgbModule.forRoot(),
         LayoutModule,
-        MatToolbarModule,
-        MatSidenavModule,
         MatListModule,
         MatGridListModule,
         MatCardModule,
-        MatMenuModule,
         MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatExpansionModule
+        MatPaginatorModule
     ],
     declarations: [
         AppComponent,

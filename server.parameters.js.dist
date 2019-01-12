@@ -3,7 +3,7 @@
 module.exports = {
     http_port: 80,
     https_port: 443,
-    domain: 'explorer.publiq.network',
+    domain: 'wic.domain',
     use_ssl: true,
     certificate: {
         key_path: '/etc/ssl/private.pem',

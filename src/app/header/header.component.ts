@@ -8,12 +8,4 @@ import {Component} from '@angular/core';
 export class HeaderComponent {
     constructor() {
     }
-
-
-
-    redirectToHomePage(event: any) {
-        event.preventDefault();
-
-        // this.router.navigate(['']);
-    }
 }

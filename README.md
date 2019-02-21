@@ -1,4 +1,4 @@
-# WIC
+# WIC ...
 
 
 This is WIC frontend project based on [Angular Last Version And SSR](https://angular.io/).
